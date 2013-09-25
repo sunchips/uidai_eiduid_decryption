@@ -1,0 +1,10 @@
+# Directories #
+bin
+.metadata
+.settings
+
+*.class
+
+# Package Files #
+*.war
+*.ear

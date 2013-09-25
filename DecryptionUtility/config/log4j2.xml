@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn">
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{DATE} [%p] %c{1.} [%M] %m%n" />
+			<ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+		</Console>
+		<RollingFile name="RollingFile" fileName="C:/DecryptionUtility/logs/app.log"
+			filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
+			immediateFlush="true" append="false">
+			<PatternLayout>
+				<pattern>%d{DATE} [%p] %c{1.} [%M] %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="250 MB" />
+			</Policies>
+		</RollingFile>
+	</appenders>
+	<loggers>
+		<root level="debug">
+			<appender-ref ref="Console"/>
+			<appender-ref ref="RollingFile" />
+		</root>
+	</loggers>
+</configuration>
