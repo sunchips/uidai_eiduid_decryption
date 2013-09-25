@@ -135,6 +135,7 @@ public class DecryptEIDUID extends Thread {
       versionNumber = new String(chunks);
       // System.out.println(versionNumber);
       if (!versionNumber.equalsIgnoreCase("VERSION_1.0")) {
+        fis.close();
         fis = new FileInputStream(inFile.toFile());
       } else {
         used += 11;

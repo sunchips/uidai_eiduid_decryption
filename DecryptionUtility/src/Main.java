@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
@@ -45,7 +44,7 @@ public class Main extends Thread {
   private static QueueCounter queueThread;
 
   public Main(QueueCounter queueThread) {
-    this.queueThread = queueThread;
+    Main.queueThread = queueThread;
   }
 
   public void run() {

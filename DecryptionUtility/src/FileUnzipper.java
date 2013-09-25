@@ -5,8 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -16,12 +14,10 @@ import org.apache.logging.log4j.Logger;
 
 public class FileUnzipper {
 
-  private Path zipFile;
   private ArrayList<File> outFiles;
   private static final Logger LOG = LogManager.getLogger(FileUnzipper.class);
 
   public FileUnzipper(Path zipFile) {
-    this.zipFile = zipFile;
     outFiles = new ArrayList<>();
     try {
       ZipInputStream zis = new ZipInputStream(new FileInputStream(zipFile.toFile()));

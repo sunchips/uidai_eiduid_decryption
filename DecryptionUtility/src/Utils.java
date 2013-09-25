@@ -1,13 +1,10 @@
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 import org.bouncycastle.crypto.digests.SHA256Digest;
-import org.bouncycastle.jcajce.provider.digest.SHA256.Digest;
 
 class Utils {
   private static String digits = "0123456789abcdef";
