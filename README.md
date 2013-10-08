@@ -7,6 +7,6 @@ This application runs on Java 7 and it requires JCE ((http://www.oracle.com/tech
 
 Run this like you would run any .jar file.
 
-For example: `java -Xms1024m -jar DecryptionUtility.jar`
+For example: `java -Xms1024m -Dfile.encoding=UTF-8 -jar DecryptionUtility.jar`
 
 ---
