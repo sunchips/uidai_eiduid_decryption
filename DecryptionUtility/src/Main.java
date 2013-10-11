@@ -51,7 +51,9 @@ public class Main extends Thread {
     // Load Property File
     Properties prop = new Properties();
     try {
-      prop.load(new FileInputStream("DecryptorUtility.properties"));
+      FileInputStream tmp = new FileInputStream("DecryptorUtility.properties");
+      prop.load(tmp);
+      tmp.close();
     } catch (Exception e) {
       try {
         prop.load(Main.class.getResourceAsStream("DecryptorUtility.properties"));
@@ -172,7 +174,7 @@ public class Main extends Thread {
         e.printStackTrace();
         LOG.error(ExceptionUtils.getStackTrace(e));
       }
-      
+
     }
     tpe.shutdown();
     queueThread.stopThread();

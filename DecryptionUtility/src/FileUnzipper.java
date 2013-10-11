@@ -28,7 +28,7 @@ public class FileUnzipper {
 
         System.out.println("Extracting File: " + extractedFile.getAbsolutePath());
         FileOutputStream fos = new FileOutputStream(extractedFile);
-        byte[] buffer = new byte[1024];
+        byte[] buffer = new byte[Main.CHUNK_SIZE];
         while ((len = zis.read(buffer)) > 0) {
           fos.write(buffer, 0, len);
         }
